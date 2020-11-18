@@ -7,6 +7,9 @@
 1. Fork la acest repo
 2. `git clone` la forkul nou creat (nu acest repo)
 3. `npm install --legacy-peer-deps` pentru a descărca toate dependențele necesare
+4. Creează un branch nou `quest` din `main` și lucrează pe el.
+5. Oferă-mi access la fork, de pe GitHub `settings/access`, invită un colaborator, caută
+   `victor@locoman.ro`.
 
 ## Rularea proiectului
 
@@ -170,3 +173,8 @@ mândru de realizarea ta.
 12. Oferă aplicației o altă interfață. E o oportunitate bună să experimentezi, lasă designerul din
     tine liber să-și facă de cap.
 13. Îmbunătățește algoritmul de recomandări cu ceva mai inteligent.
+
+## După ce ai terminat sarcinile,
+
+deschide un PR din `[username]/quest` în `[username]/main` și adaugă-mă la `Reviews`, unde
+`[username]` trebuie înlocuit cu username-ul tău de GitHub. Apoi "mark as done" pe classroom.
