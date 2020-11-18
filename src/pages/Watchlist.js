@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import useFetchEffect from '../hooks/useFetchEffect';
-import { getImage, imageFallback } from '../connectors/tmdb';
+import { buildImageUrl, imageFallback } from '../connectors/tmdb';
 import { WATCHLIST_URL } from '../connectors/api';
 import { STATUS } from '../utils';
 
@@ -47,7 +47,7 @@ export default function Watchlist() {
             </Badge>
             <Tooltip label={movie.title}>
               <Image
-                src={getImage(movie.poster_path, 'w300')}
+                src={buildImageUrl(movie.poster_path, 'w300')}
                 alt="Poster"
                 fallbackSrc={imageFallback}
               />

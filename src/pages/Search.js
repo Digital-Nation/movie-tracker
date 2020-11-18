@@ -12,8 +12,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-import useFetch from '../hooks/useFetchEffect';
-import { searchMovie } from '../connectors/tmdb';
+import useFetchEffect from '../hooks/useFetchEffect';
+import { buildSearchMovieUrl } from '../connectors/tmdb';
 import { getYear, STATUS } from '../utils';
 
 export default function Search() {
@@ -29,7 +29,7 @@ export default function Search() {
     }
   };
 
-  const { status, data, error } = useFetch(searchMovie(terms), !!terms);
+  const { status, data, error } = useFetchEffect(buildSearchMovieUrl(terms), !!terms);
 
   return (
     <Container p={3}>

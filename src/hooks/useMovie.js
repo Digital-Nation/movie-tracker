@@ -1,7 +1,7 @@
 import React from 'react';
 import { STATUS, generateConfig } from '../utils';
 import { MOVIES_URL } from '../connectors/api';
-import { getMovie } from '../connectors/tmdb';
+import { buildMovieUrl } from '../connectors/tmdb';
 
 export default function useMovie(movieId) {
   const [status, setStatus] = React.useState(STATUS.IDLE);
@@ -19,7 +19,7 @@ export default function useMovie(movieId) {
         if (data.status === 404) {
           // movie is not in our DB, so we will fetch it from TMDB
           // by returning another promise, it will continue the flow of current promise. nice and clean
-          return fetch(getMovie(movieId));
+          return fetch(buildMovieUrl(movieId));
         }
         return data;
       })

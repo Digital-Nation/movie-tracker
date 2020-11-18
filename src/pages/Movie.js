@@ -13,7 +13,7 @@ import {
 import { ChevronLeftIcon, AddIcon, CheckIcon } from '@chakra-ui/icons';
 import { useParams, useHistory } from 'react-router-dom';
 import useMovie from '../hooks/useMovie';
-import { getImage, imageFallback } from '../connectors/tmdb';
+import { buildImageUrl, imageFallback } from '../connectors/tmdb';
 import { getYear, STATUS } from '../utils';
 import WatchlistButton from '../components/WatchlistButton';
 
@@ -69,7 +69,7 @@ export default function Movie() {
       <HStack spacing={3} align="flex-start">
         <Box>
           <Image
-            src={getImage(movie.poster_path, 'w300')}
+            src={buildImageUrl(movie.poster_path, 'w300')}
             alt="Poster"
             w="35vw"
             maxW={300}
