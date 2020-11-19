@@ -45,7 +45,7 @@ export default function Watchlist() {
             <Badge variant="solid" colorScheme="teal" pos="absolute" top={1} right={1}>
               {movie.vote_average}
             </Badge>
-            <Tooltip label={movie.title}>
+            <Tooltip label={movie.genres[0].name} >
               <Image
                 src={buildImageUrl(movie.poster_path, 'w300')}
                 alt="Poster"

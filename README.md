@@ -134,12 +134,12 @@ Acum să trecem la muncă. Am pregătit o listă cu sarcini, pentru fiecare sarc
 un punct. Cu 5 puncte primești badge, cu 10 deja ai punctaj maxim. cu 10+ vei fi lăudat de mentor,
 mândru de realizarea ta.
 
-1. Deschide `README.md` în VS Code. O să verzi sursa textului în format Markdown. E chiar simpatic,
+1. ~~Deschide `README.md` în VS Code. O să verzi sursa textului în format Markdown. E chiar simpatic,
    dar dacă vrei să-l vezi ca și pe GitHub, apasă `Preview` din bara de sus. Acum, după ce ai
-   completat un task, ~~✂️ îl tai de aici~~. Incepe cu acesta.
+   completat un task, ✂️ îl tai de aici. Incepe cu acesta.~~
 
-   Apoi modifică datele de conectare (user, pass, url) la MongoDB în `server/db.js -> CONFIG`. E
-   important ca să evităm conflictele. Cel puțin, folosește o bază de date diferită.
+   ~~Apoi modifică datele de conectare (user, pass, url) la MongoDB în `server/db.js -> CONFIG`. E
+   important ca să evităm conflictele. Cel puțin, folosește o bază de date diferită.~~
 
 2. Completează pagina Search cu mai multe informații (popularitatea, ratingul, posterul, orice
    altceva ți se pare interesant). Adaptează design-ul.

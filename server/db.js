@@ -2,9 +2,9 @@ const MongoClient = require('mongodb').MongoClient;
 
 // Bad practice: don't keep sensitive data in git
 const CONFIG = {
-  USER: 'vic',
-  PASS: 'G7h6k296kZfwrnQf',
-  URL: 'cms-cluster0.y1gul.mongodb.net',
+  USER: 'm001-student',
+  PASS: 'mApNVHtBFzyw90ho',
+  URL: 'sandbox.ibgzx.mongodb.net/test',
   DB: 'app',
 };
 
