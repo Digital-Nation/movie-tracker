@@ -141,8 +141,8 @@ mândru de realizarea ta.
    ~~Apoi modifică datele de conectare (user, pass, url) la MongoDB în `server/db.js -> CONFIG`. E
    important ca să evităm conflictele. Cel puțin, folosește o bază de date diferită.~~
 
-2. Completează pagina Search cu mai multe informații (popularitatea, ratingul, posterul, orice
-   altceva ți se pare interesant). Adaptează design-ul.
+2. ~~Completează pagina Search cu mai multe informații (popularitatea, ratingul, posterul, orice
+   altceva ți se pare interesant). Adaptează design-ul.~~
 3. Completeaza pagina unui film cu mai multe informații (backdrop, genres, link to imdb, durata,
    profit, rating, orice altceva ți se pare interesant). Adaptează design-ul.
 4. Pe pagina unui film există 2 acțiuni - adaugă la favorite și adaugă în istoric. Primul este deja

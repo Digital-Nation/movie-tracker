@@ -49,14 +49,16 @@ export default function Search() {
   return (
     <Container p={3} maxW="80em">
     <Center>
-      <Box as="form" onSubmit={handleSearch} w="50%" d="flex" mb={30}>
+      <Box as="form" onSubmit={handleSearch} w="50%" d="flex" mb={30} >
       
-        <Input placeholder="Search for a movie..." defaultValue={terms} ref={searchRef} mr={3} />
+        <Input placeholder="Search for a movie..." defaultValue={terms} ref={searchRef} mr={3} color="teal.500" focusBorderColor="teal.500"/>
         <IconButton
           aria-label="Search for a movie"
           icon={<SearchIcon />}
           type="submit"
           isLoading={status === STATUS.PENDING}
+          colorScheme={"teal"} 
+          variant="outline"
         />
         
       </Box>
@@ -122,7 +124,7 @@ export default function Search() {
         
           </SimpleGrid>
        
-        : <Text>:( no film with title {terms} found</Text>
+        : <Center><Text>:( no film with title {terms} found</Text></Center>
       )}
       {/*DONE @todo: Display a message when no results DONE*/}
     </Container>
