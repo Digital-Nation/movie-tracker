@@ -50,6 +50,7 @@ export default function Search() {
         </Text>
       )}
       {status === STATUS.RESOLVED && (
+        data.results.length !== 0 ?
         <UnorderedList>
           {data.results.map(({ id, title, release_date }) => (
             <ListItem key={id}>
@@ -62,6 +63,7 @@ export default function Search() {
             </ListItem>
           ))}
         </UnorderedList>
+        : <Text>:( no film with title {terms} found</Text>
       )}
       {/* @todo: Display a message when no results */}
     </Container>

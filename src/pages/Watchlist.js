@@ -42,17 +42,19 @@ export default function Watchlist() {
       <SimpleGrid minChildWidth={150} spacing={3}>
         {movies.map(movie => (
           <Box as={Link} to={`/movies/${movie.id}`} key={movie.id} pos="relative" noOfLines={2}>
-            <Badge variant="solid" colorScheme="teal" pos="absolute" top={1} right={1}>
-              {movie.vote_average}
-            </Badge>
             <Tooltip label={movie.genres[0].name} >
               <Image
                 src={buildImageUrl(movie.poster_path, 'w300')}
                 alt="Poster"
                 fallbackSrc={imageFallback}
+                pos="relative"
+                border={"solid"}
               />
             </Tooltip>
-            <Text>{movie.title}</Text>
+            <Badge variant="solid" colorScheme="teal" pos="relative" top={1} right={0} padding={2} fontSize={15}>
+              {movie.vote_average}
+            </Badge>
+            <Text pos="relative" top={0} marginTop={3} fontSize="1.5rem">{movie.title} </Text>
           </Box>
         ))}
       </SimpleGrid>
