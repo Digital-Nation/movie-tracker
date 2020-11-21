@@ -55,6 +55,7 @@ export default function Watchlist() {
               {movie.vote_average}
             </Badge>
             <Text pos="relative" top={0} marginTop={3} fontSize="1.5rem">{movie.title} </Text>
+            
           </Box>
         ))}
       </SimpleGrid>

@@ -143,8 +143,8 @@ mândru de realizarea ta.
 
 2. ~~Completează pagina Search cu mai multe informații (popularitatea, ratingul, posterul, orice
    altceva ți se pare interesant). Adaptează design-ul.~~
-3. Completeaza pagina unui film cu mai multe informații (backdrop, genres, link to imdb, durata,
-   profit, rating, orice altceva ți se pare interesant). Adaptează design-ul.
+3. ~~Completeaza pagina unui film cu mai multe informații (backdrop, genres, link to imdb, durata,
+   profit, rating, orice altceva ți se pare interesant). Adaptează design-ul.~~
 4. Pe pagina unui film există 2 acțiuni - adaugă la favorite și adaugă în istoric. Primul este deja
    implementat. Sarcina este să-l implementezi și pe-al doilea - adaugă în istoric, care la click,
    face un request către server, care va salva starea nouă în BD.

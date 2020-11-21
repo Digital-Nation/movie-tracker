@@ -8,10 +8,7 @@ import {
   Button,
   Center,
   SimpleGrid,
-  ListItem,
   Container,
-  Link,
-  Tooltip,
   Image,
   Progress,
   Text,
@@ -20,11 +17,10 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
 } from '@chakra-ui/react';
-import { SearchIcon, ChatIcon } from '@chakra-ui/icons';
+import { SearchIcon} from '@chakra-ui/icons';
 import useFetchEffect from '../hooks/useFetchEffect';
 import { buildSearchMovieUrl } from '../connectors/tmdb';
 import { getYear, STATUS } from '../utils';
@@ -42,8 +38,8 @@ export default function Search() {
     }
   };
 
+ 
   
-
   const { status, data, error } = useFetchEffect(buildSearchMovieUrl(terms), !!terms);
 
   return (
@@ -102,10 +98,10 @@ export default function Search() {
                 <PopoverHeader>
                 <Text>{title}</Text>
                 <Text>
-                Release date: {release_date.slice(0,4)}
+                Release date: {getYear(release_date)}
                 </Text>  
-                <Text>
-                Score: {vote_average > 0? vote_average : ''}
+                <Text >
+                Score: {vote_average > 0? vote_average : 'N/A'}
                 </Text>
                 </PopoverHeader>
                 <PopoverBody>
