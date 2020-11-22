@@ -84,6 +84,12 @@ export default function Movie() {
             </Text>
           </HStack>
           <Text>{movie.overview}</Text>
+          <Text  color="GrayText" >{'Rating: '}
+            {movie.vote_average}
+          </Text>
+          <Text as="span" color="GrayText" >{'From: '}
+            {movie.vote_count}{' votes'}
+          </Text>
         </Box>
       </HStack>
     </Container>
