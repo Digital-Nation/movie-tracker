@@ -6,15 +6,18 @@ import {
   Center,
   Container,
   Box,
-  SimpleGrid,
-  Badge,
+  Grid,
   Tooltip,
+  Heading,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import useFetchEffect from '../hooks/useFetchEffect';
 import { buildImageUrl, imageFallback } from '../connectors/tmdb';
 import { HISTORY_URL } from '../connectors/api';
-import { STATUS } from '../utils';
+import { STATUS, SetDate} from '../utils';
+
+
+
 
 export default function History() {
   const { status, data: movies, error } = useFetchEffect(`${HISTORY_URL}`);
@@ -36,12 +39,20 @@ export default function History() {
       </Container>
     );
   }
+
   return (
     <Container p={3} maxW="80em">
-      <SimpleGrid minChildWidth={150} spacing={3}>
+    <Center>
+    <Heading mt={"30px"} mb={"50px"}>List of films you have already watched</Heading>
+    </Center>
+      <Grid h={"200"} templateRows="repeat(10, 1fr)" templateColumns="repeat(3, 1fr)" gap={"2rem"}>
         {movies.map(movie => (
-          <Box as={Link} to={`/movies/${movie.id}`} key={movie.id} pos="relative" noOfLines={2}>
-            <Tooltip label={movie.genres[0].name} >
+          
+          <Box key={movie.id} pos="relative" noOfLines={2}>
+            
+            
+            <Link to={`/movies/${movie.id}`}>
+            
               <Image
                 src={buildImageUrl(movie.poster_path, 'w300')}
                 alt="Poster"
@@ -49,16 +60,24 @@ export default function History() {
                 pos="relative"
                 border={"solid"}
               />
-            </Tooltip>
-            <Badge variant="solid" colorScheme="teal" pos="relative" top={1} right={0} padding={2} fontSize={15}>
-              {movie.vote_average}
-            </Badge>
-            <Text pos="relative" top={0} marginTop={3} fontSize="1.5rem">{movie.title} </Text>
+              
+              </Link>
+           
+            
+            <Text pos="relative" top={0} marginTop={3} fontSize="1.5rem" as={Link}>{movie.title} </Text>
+            <Box mt={"10px"} ml={"3px"} >
+            Watched on: <SetDate/>
+            </Box>
             
           </Box>
+          
+          
         ))}
-      </SimpleGrid>
+        <Box>
+            
+            </Box>
+      </Grid>
     </Container>
   );
-
+  
 }
