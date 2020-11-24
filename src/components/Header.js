@@ -27,7 +27,7 @@ export default function Header() {
         >
           <Flex align="center" mr={5}>
             <Heading as={RouterLink} to="/" size="lg" letterSpacing={'-.1rem'}>
-              Movie Tracker
+              Diginatly.tv
             </Heading>
           </Flex>
 

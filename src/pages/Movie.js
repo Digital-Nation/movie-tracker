@@ -14,17 +14,18 @@ import {
   ListIcon,
   Tooltip
 } from '@chakra-ui/react';
-import { ChevronLeftIcon, AddIcon, CheckIcon, InfoOutlineIcon, CalendarIcon, StarIcon, TimeIcon } from '@chakra-ui/icons';
+import { ChevronLeftIcon, InfoOutlineIcon, CalendarIcon, StarIcon, TimeIcon } from '@chakra-ui/icons';
 import { useParams, useHistory } from 'react-router-dom';
 import useMovie from '../hooks/useMovie';
 import { buildImageUrl, imageFallback } from '../connectors/tmdb';
 import { getYear, MovieLength, STATUS } from '../utils';
 import WatchlistButton from '../components/WatchlistButton';
+import HistoryButton from '../components/HistoryButton';
 
 export default function Movie() {
   const { movieId } = useParams();
   const history = useHistory();
-  const [isHistoryActive, setHistoryActive] = React.useState(false); // temp state, for UI only, should be removed when implemented properly
+  //const [isHistoryActive, setHistoryActive] = React.useState(false); // temp state, for UI only, should be removed when implemented properly
 
   const { movie, status, error, updateStatus, updateMovie } = useMovie(movieId);
 
@@ -61,13 +62,7 @@ export default function Movie() {
         />
         <HStack>
           <WatchlistButton movie={movie} status={updateStatus} update={updateMovie} />
-          <IconButton
-            aria-label={isHistoryActive ? 'Remove from history' : 'Mark as watched'}
-            icon={isHistoryActive ? <CheckIcon /> : <AddIcon />}
-            colorScheme="teal"
-            variant={isHistoryActive ? 'solid' : 'outline'}
-            onClick={() => setHistoryActive(a => !a)}
-          />
+          <HistoryButton movie={movie} status={updateStatus} update={updateMovie}/>
         </HStack>
       </HStack>
       <HStack spacing={4} align="flex-start">
@@ -108,9 +103,10 @@ export default function Movie() {
           <ListIcon as={TimeIcon}/>
             {MovieLength(movie.runtime)}
           </ListItem>
+          <Text>Genres:</Text>
           {movie.genres.map(el => (<ListItem><ListIcon as={InfoOutlineIcon} color="teal.500" />{el.name}</ListItem>))}
           </List>
-          <Text>{movie.overview}</Text>
+          <Text paddingTop={4}>{movie.overview}</Text>
         </Box>
       </HStack>
     </Container>

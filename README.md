@@ -145,9 +145,9 @@ mândru de realizarea ta.
    altceva ți se pare interesant). Adaptează design-ul.~~
 3. ~~Completeaza pagina unui film cu mai multe informații (backdrop, genres, link to imdb, durata,
    profit, rating, orice altceva ți se pare interesant). Adaptează design-ul.~~
-4. Pe pagina unui film există 2 acțiuni - adaugă la favorite și adaugă în istoric. Primul este deja
-   implementat. Sarcina este să-l implementezi și pe-al doilea - adaugă în istoric, care la click,
-   face un request către server, care va salva starea nouă în BD.
+4. ~~Pe pagina unui film există 2 acțiuni - adaugă la favorite și adaugă în istoric. Primul este deja~~
+   ~~implementat. Sarcina este să-l implementezi și pe-al doilea - adaugă în istoric, care la click,~~
+   ~~face un request către server, care va salva starea nouă în BD.~~
 5. Acum că avem funcționalitatea de a adăuga în istoric, să o îmbunătățim cu data când a fost
    salvat. Și dacă utilizatorul a privit filmul în altă zi? Pentru asta mai adaugă și opțiunea de a
    schimba data. Oare putem privi un film care încă nu a fost lansat?
