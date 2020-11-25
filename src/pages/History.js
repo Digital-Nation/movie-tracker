@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 import useFetchEffect from '../hooks/useFetchEffect';
 import { buildImageUrl, imageFallback } from '../connectors/tmdb';
 import { HISTORY_URL } from '../connectors/api';
-import { STATUS, SetDate} from '../utils';
+import { STATUS, SetDate, getYear} from '../utils';
 
 
 
@@ -45,10 +45,11 @@ export default function History() {
     <Center>
     <Heading mt={"30px"} mb={"50px"}>List of films you have already watched</Heading>
     </Center>
-      <Grid h={"200"} templateRows="repeat(10, 1fr)" templateColumns="repeat(3, 1fr)" gap={"2rem"}>
+      <Grid h={"200"} templateRows="repeat(10, 1fr)" templateColumns="repeat(5, 1fr)" spacing={"1rem"} >
         {movies.map(movie => (
+          <Container>
           
-          <Box key={movie.id} pos="relative" noOfLines={2}>
+          <Box key={movie.id} pos="relative" noOfLines={2} maxW={"300px"}>
             
             
             <Link to={`/movies/${movie.id}`}>
@@ -59,18 +60,24 @@ export default function History() {
                 fallbackSrc={imageFallback}
                 pos="relative"
                 border={"solid"}
+                htmlWidth={"300px"}
               />
               
               </Link>
-           
+              </Box>
+              
+            <Text pos="relative" top={0} marginTop={3} fontSize="1rem" as={Link}>{movie.title} </Text>
+            <Box mt={"10px"} ml={"3px"} mb={"2px"} >
+             {getYear(movie.release_date) <= new Date().getFullYear() ?
+              <Text>Watched on: <SetDate/></Text> :
+              <Text>Will be released on {getYear(movie.release_date)}</Text>}
             
-            <Text pos="relative" top={0} marginTop={3} fontSize="1.5rem" as={Link}>{movie.title} </Text>
-            <Box mt={"10px"} ml={"3px"} >
-            Watched on: <SetDate/>
+              
+            
             </Box>
             
-          </Box>
           
+          </Container>
           
         ))}
         <Box>
