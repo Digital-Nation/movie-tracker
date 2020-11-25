@@ -43,7 +43,7 @@ export default function History() {
   return (
     <Container p={3} maxW="80em">
     <Center>
-    <Heading mt={"30px"} mb={"50px"}>List of films you have already watched</Heading>
+    <Heading mt={"30px"} mb={"50px"} color={"red.500"}>List of films you have already watched or checked</Heading>
     </Center>
       <Grid h={"200"} templateRows="repeat(10, 1fr)" templateColumns="repeat(5, 1fr)" spacing={"1rem"} >
         {movies.map(movie => (
@@ -66,15 +66,15 @@ export default function History() {
               </Link>
               </Box>
               
-            <Text pos="relative" top={0} marginTop={3} fontSize="1rem" as={Link}>{movie.title} </Text>
-            <Box mt={"10px"} ml={"3px"} mb={"2px"} >
+            <Text pos="relative" top={0} marginTop={3} fontSize="1rem" color={"red.500"} as={Link}>{movie.title} </Text>
+            
+            
+            <Box mt={"10px"} ml={"3px"} mb={"10px"} >
              {getYear(movie.release_date) <= new Date().getFullYear() ?
               <Text>Watched on: <SetDate/></Text> :
               <Text>Will be released on {getYear(movie.release_date)}</Text>}
-            
-              
-            
             </Box>
+            
             
           
           </Container>

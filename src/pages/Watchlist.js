@@ -9,6 +9,7 @@ import {
   SimpleGrid,
   Badge,
   Tooltip,
+  Heading,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import useFetchEffect from '../hooks/useFetchEffect';
@@ -39,9 +40,10 @@ export default function Watchlist() {
 
   return (
     <Container p={3} maxW="80em">
+    <Center><Heading mb={"3rem"} mt={"3rem"} color={"red.500"}>Interesting productions that you want to watch</Heading></Center>
       <SimpleGrid minChildWidth={150} spacing={3}>
         {movies.map(movie => (
-          <Box as={Link} to={`/movies/${movie.id}`} key={movie.id} pos="relative" noOfLines={2}>
+          <Box as={Link} to={`/movies/${movie.id}`} key={movie.id} pos="relative" noOfLines={4}>
             <Tooltip label={movie.genres[0].name} >
               <Image
                 src={buildImageUrl(movie.poster_path, 'w300')}
@@ -51,10 +53,10 @@ export default function Watchlist() {
                 border={"solid"}
               />
             </Tooltip>
-            <Badge variant="solid" colorScheme="teal" pos="relative" top={1} right={0} padding={2} fontSize={15}>
+            <Badge variant="solid" colorScheme={"red"} pos="relative" top={1} right={0} padding={2} fontSize={15}>
               {movie.vote_average}
             </Badge>
-            <Text pos="relative" top={0} marginTop={3} fontSize="1.5rem">{movie.title} </Text>
+            <Text pos="relative" top={0} marginTop={3} fontSize="1rem" color={"red.500"}>{movie.title} </Text>
             
           </Box>
         ))}

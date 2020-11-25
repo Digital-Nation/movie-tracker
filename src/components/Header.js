@@ -15,7 +15,7 @@ export default function Header() {
   const handleToggle = () => setShow(s => !s);
 
   return (
-    <Box bg="teal.500">
+    <Box bg="gray.800" borderBottom={"1px"} borderColor={"orange.500"}>
       <Container p={0} maxW="80em">
         <Flex
           as="nav"
@@ -23,7 +23,7 @@ export default function Header() {
           justify="space-between"
           wrap="wrap"
           padding="1.5rem"
-          color="white"
+          color="orange.500"
         >
           <Flex align="center" mr={5}>
             <Heading as={RouterLink} to="/" size="lg" letterSpacing={'-.1rem'}>

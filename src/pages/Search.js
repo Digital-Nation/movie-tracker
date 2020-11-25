@@ -47,19 +47,19 @@ export default function Search() {
     <Center>
       <Box as="form" onSubmit={handleSearch} w="50%" d="flex" mb={30} >
       
-        <Input placeholder="Search for a movie..." defaultValue={terms} ref={searchRef} mr={3} color="teal.500" focusBorderColor="teal.500"/>
+        <Input placeholder="Search for a movie..." defaultValue={terms} ref={searchRef} mr={3} color="orange.500" focusBorderColor="orange.500"/>
         <IconButton
           aria-label="Search for a movie"
           icon={<SearchIcon />}
           type="submit"
           isLoading={status === STATUS.PENDING}
-          colorScheme={"teal"} 
+          colorScheme={"orange"} 
           variant="outline"
         />
         
       </Box>
       </Center>
-      {status === STATUS.IDLE && <Text>Type some terms and submit for a quick search</Text>}
+      {status === STATUS.IDLE && <Center><Text fontSize={"1.5rem"} color={"orange.500"} overflowWrap={"break-word"}>Hello there! Here you'll find all the great movies! Just type their name in the box above</Text></Center>}
       {status === STATUS.PENDING && <Progress size="xs" isIndeterminate />}
       {status === STATUS.REJECTED && (
         <Text>
@@ -82,6 +82,7 @@ export default function Search() {
                 fallbackSrc={imageFallback}
                 pos="relative"
                 border={"solid"}
+                borderColor={"orange.500"}
                 mb={1}
                 
               />
@@ -90,9 +91,9 @@ export default function Search() {
             <Box >
             <Popover placement="top" >
               <PopoverTrigger>
-                <Button colorScheme={"teal"} variant="outline">Details</Button>
+                <Button colorScheme={"orange"} variant="outline">Details</Button>
               </PopoverTrigger>
-              <PopoverContent color="teal.500"  >
+              <PopoverContent color="orange.500"  >
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverHeader>
