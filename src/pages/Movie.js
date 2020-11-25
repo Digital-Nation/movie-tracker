@@ -10,12 +10,15 @@ import {
   Heading,
   IconButton,
 } from '@chakra-ui/react';
-import { ChevronLeftIcon, AddIcon, CheckIcon } from '@chakra-ui/icons';
+import { ChevronLeftIcon } from '@chakra-ui/icons';
+//AddIcon,CheckIcon
 import { useParams, useHistory } from 'react-router-dom';
 import useMovie from '../hooks/useMovie';
 import { buildImageUrl, imageFallback } from '../connectors/tmdb';
 import { getYear, STATUS } from '../utils';
 import WatchlistButton from '../components/WatchlistButton';
+import HisButton from '../components/HistoryButton';
+
 
 export default function Movie() {
   const { movieId } = useParams();
@@ -44,6 +47,8 @@ export default function Movie() {
     );
   }
 
+
+  const Disabled = new Date() < new Date(movie.release_date);
   return (
     <Container p={3} maxW="80em">
       <HStack mb={3} justify="space-between">
@@ -57,14 +62,9 @@ export default function Movie() {
         />
         <HStack>
           <WatchlistButton movie={movie} status={updateStatus} update={updateMovie} />
-          <IconButton
-            aria-label={isHistoryActive ? 'Remove from history' : 'Mark as watched'}
-            icon={isHistoryActive ? <CheckIcon /> : <AddIcon />}
-            colorScheme="teal"
-            variant={isHistoryActive ? 'solid' : 'outline'}
-            onClick={() => setHistoryActive(a => !a)}
-          />
+          <HisButton movie={movie} update={updateMovie} Disabled={Disabled}/>
         </HStack>
+
       </HStack>
       <HStack spacing={3} align="flex-start">
         <Box>
@@ -84,13 +84,13 @@ export default function Movie() {
             </Text>
           </HStack>
           <Text>{movie.overview}</Text>
-          <Text  color="GrayText" >{'Rating: '}
-            {movie.vote_average}
+          <Text>
+            {'Movie raiting: ' + movie.vote_average + ' from ' + movie.vote_count + ' votes'}
           </Text>
-          <Text as="span" color="GrayText" >{'From: '}
-            {movie.vote_count}{' votes'}
-          </Text>
+          <Text>{'Runtime: ' + movie.runtime + ' minutes'}</Text>
+          
         </Box>
+
       </HStack>
     </Container>
   );
