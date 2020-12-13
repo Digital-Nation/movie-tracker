@@ -46,6 +46,7 @@ export default function Header() {
             <MenuItem to="/search">Search</MenuItem>
             <MenuItem to="/watchlist">Watchlist</MenuItem>
             <MenuItem to="/history">History</MenuItem>
+            <MenuItem to="/Profile">Profile</MenuItem>
           </Box>
 
           <Box display={{ base: show ? 'block' : 'none', sm: 'block' }} mt={{ base: 4, sm: 0 }}>

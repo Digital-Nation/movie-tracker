@@ -7,6 +7,7 @@ import Movie from '../pages/Movie';
 import Watchlist from '../pages/Watchlist';
 import History from '../pages/History';
 import Recommendations from '../pages/Recommendations';
+import Profile from '../pages/Profile.js';
 
 export default function App() {
   return (
@@ -31,6 +32,9 @@ export default function App() {
           </Route>
           <Route path="/recommendations" exact>
             <Recommendations />
+          </Route>
+          <Route path="/profile" exact>
+            <Profile />
           </Route>
           <Route path="/">
             <Home />

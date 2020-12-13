@@ -26,7 +26,6 @@ export default function Movie() {
   const [isHistoryActive, setHistoryActive] = React.useState(false); // temp state, for UI only, should be removed when implemented properly
 
   const { movie, status, error, updateStatus, updateMovie } = useMovie(movieId);
-
   if (status === STATUS.IDLE) {
     return null;
   }
@@ -46,7 +45,6 @@ export default function Movie() {
       </Container>
     );
   }
-
 
   const Disabled = new Date() < new Date(movie.release_date);
   return (
