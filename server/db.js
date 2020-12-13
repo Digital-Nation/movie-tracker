@@ -21,4 +21,6 @@ client
   .then(() => {
     const watchlist = client.db(CONFIG.DB).collection('watchlist');
     module.exports.watchlist = watchlist;
+    const users = client.db(CONFIG.DB).collection('users');
+    module.exports.users = users;
   });

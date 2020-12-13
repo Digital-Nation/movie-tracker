@@ -88,6 +88,7 @@ export default function Search() {
                   </Link>
                 </ListItem>
               </Box>
+
             )
           )}
         </UnorderedList>

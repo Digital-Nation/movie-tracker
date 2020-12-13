@@ -41,4 +41,26 @@ router.get('/watchlist', async (req, res) => {
   res.send(movies);
 });
 
+
+router.get('/profile', async (req, res) => {
+  const users = await db.users.find({}).toArray();
+  
+  res.send(users);
+  
+})
+
+router.put('/profile', async (req, res) => {
+  const { usernameId } = req.params;
+  const usernames = req.body;
+  delete usernames._id;
+  const username = await db.users.findOneAndUpdate(
+    { usernameId },
+    { $set: username },
+    { returnOriginal: false, upsert: true },
+  );
+
+  await sleep();
+  res.send(username.value);
+});
+
 module.exports = router;

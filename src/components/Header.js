@@ -43,6 +43,7 @@ export default function Header() {
             alignItems="center"
             flexGrow={1}
           >
+            <MenuItem to="/profile">Profile</MenuItem>
             <MenuItem to="/search">Search</MenuItem>
             <MenuItem to="/watchlist">Watchlist</MenuItem>
             <MenuItem to="/history">History</MenuItem>
