@@ -43,9 +43,44 @@ router.get('/watchlist', async (req, res) => {
     .sort(['release_date', -1])
     .limit(100)
     .toArray();
-
+node
   await sleep();
   res.send(movies);
 });
+
+router.get('/history', async (req, res) => {
+  const history = await db.movies
+    .find({ history: 'watched' })
+    .sort(['history_date', -1])
+    .limit(100)
+    .toArray();
+
+  await sleep();
+  res.send(history);
+});
+
+router.get('/profile', async (req, res) => {
+  const profile = await db.users
+  .findOne({ });
+
+  await sleep();
+  res.send(profile);
+    
+});
+
+router.put('/profile', async (req, res) => {
+  const { profileId } = req.params;
+  const profileData = req.body;
+  delete profileData._id; // Mongo don't let us update this field
+  const profile = await db.movies.findOneAndUpdate(
+    { },
+    { $set: profileData },
+    { returnOriginal: false, upsert: true },
+  );
+
+  await sleep();
+  res.send(profile.value);
+});
+
 
 module.exports = router;

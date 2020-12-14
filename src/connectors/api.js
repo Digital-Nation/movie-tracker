@@ -14,3 +14,5 @@ export const HISTORY = {
 
 export const MOVIES_URL = `${URL}/movies`;
 export const WATCHLIST_URL = `${URL}/watchlist`;
+export const HISTORY_URL = `${URL}/history`;
+export const PROFILE_URL = `${URL}/profile`;
